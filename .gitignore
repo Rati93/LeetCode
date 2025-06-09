@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Learn more about Jenkins and JENKINS_HOME directory for which this file is
 # intended.
 #
@@ -48,3 +49,43 @@ jobs/**/*workspace
 
 # As a result, only Jenkins settings and job config.xml files in JENKINS_HOME
 # will be tracked by git.
+=======
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+>>>>>>> 552dbc1 (Leetcode Initial Commit)
