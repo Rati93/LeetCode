@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 public class DuplicateCharacters {
 
-	public DuplicateCharacters() {
+	public static void main (String[] args) {
 		// TODO Auto-generated method stub
 		String str = "Hi Hello to this world";
 		 str=str.replaceAll(" ", "");
