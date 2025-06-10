@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Compile Java Files') {
+            steps {
+                sh 'mkdir -p out'
+                sh 'javac -d out src/*.java'
+            }
+        }
+
+        stage('Run Programs and Capture Output') {
+            steps {
+                sh '''
+                    mkdir -p reports
+                    java -cp out Hello > reports/results.txt
+                    echo "===================" >> reports/results.txt
+                    java -cp out PrimeNumberChecker >> reports/results.txt
+                '''
+            }
+        }
+
+        stage('Archive Custom Report') {
+            steps {
+                archiveArtifacts artifacts: 'reports/results.txt', onlyIfSuccessful: true
+            }
+        }
+    }
+}
